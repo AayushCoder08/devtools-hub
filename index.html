@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A growing collection of simple, free browser-based tools for everyday tasks.">
+  <title>DevTools Hub — Tools for everyday work</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="DevTools Hub home"><span class="brand-icon">&lt;/&gt;</span><span>DevTools<span class="brand-accent">Hub</span></span></a>
+    <nav class="nav"><a href="#tools">All tools</a><a href="#about">About</a></nav>
+    <a class="top-cta" href="#tools">Explore tools <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <span class="eyebrow"><span class="pulse"></span> YOUR EVERYDAY DIGITAL TOOLKIT</span>
+        <h1>Small tools.<br><span>Big productivity.</span></h1>
+        <p class="hero-copy">Useful, simple tools for creators, students and developers — all in one place.</p>
+        <div class="hero-search">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search tools, e.g. QR code, JSON..." aria-label="Search tools">
+          <kbd>SEARCH</kbd>
+        </div>
+        <div class="hero-meta"><span>✦</span> Free to use <i></i> No account needed <i></i> Built for speed</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="art-card card-main"><div class="code-top"><b></b><b></b><b></b><span>quick-tools.js</span></div><div class="code-lines"><p><i>const</i> tools = [</p><p class="indent"><em>"JSON Formatter"</em>,</p><p class="indent"><em>"Image Compressor"</em>,</p><p class="indent"><em>"QR Generator"</em></p><p>];</p><p class="code-success">✓ Ready to work</p></div></div>
+        <div class="floating-icon icon-code">{ }</div><div class="floating-icon icon-spark">✳</div><div class="floating-icon icon-check">✓</div>
+      </div>
+    </section>
+
+    <section class="stats-strip" aria-label="Site features">
+      <div><strong>01</strong><span>Simple tools</span></div><div><strong>02</strong><span>Fast workflow</span></div><div><strong>03</strong><span>Privacy-first by design</span></div><div><strong id="toolCount">06</strong><span>Available tools</span></div>
+    </section>
+
+    <section class="tools-section" id="tools">
+      <div class="section-head"><div><p class="eyebrow dark-eyebrow">THE TOOLBOX</p><h2>What do you need <span>today?</span></h2><p class="section-copy">Pick a tool and get straight to work.</p></div><div class="category-pills" id="categoryPills"><button class="pill active" data-category="All">All tools</button><button class="pill" data-category="Developer">Developer</button><button class="pill" data-category="Images">Images</button><button class="pill" data-category="Everyday">Everyday</button></div></div>
+      <div class="productivity-bar">
+        <div class="productivity-copy"><span class="productivity-spark">✦</span><span><strong>Work faster</strong><small>Tip: press <kbd>/</kbd> to search, or <kbd>Esc</kbd> to close a tool.</small></span></div>
+        <div class="recent-tools" id="recentTools" aria-live="polite"><span class="recent-label">RECENT</span><span class="recent-empty">Your recently opened tools will appear here.</span></div>
+      </div>
+      <div class="tool-grid" id="toolGrid">
+        <article class="tool-card" tabindex="0" role="button" aria-label="Open tool: JSON Formatter" data-name="JSON Formatter" data-category="Developer" data-description="Format and validate JSON text.">
+          <div class="tool-card-top"><span class="tool-icon purple">{ }</span><span class="tool-tag">DEVELOPER</span></div><h3>JSON Formatter</h3><p>Make messy JSON clean, readable and easier to debug.</p><button class="tool-open" data-tool="json">Open tool <span>↗</span></button>
+        </article>
+        <article class="tool-card" tabindex="0" role="button" aria-label="Open tool: Word Counter" data-name="Word Counter" data-category="Everyday" data-description="Count words, characters and reading time.">
+          <div class="tool-card-top"><span class="tool-icon blue">Aa</span><span class="tool-tag">EVERYDAY</span></div><h3>Word Counter</h3><p>Count words, characters, sentences and reading time.</p><button class="tool-open" data-tool="words">Open tool <span>↗</span></button>
+        </article>
+        <article class="tool-card" tabindex="0" role="button" aria-label="Open tool: Case Converter" data-name="Case Converter" data-category="Everyday" data-description="Convert text between uppercase, lowercase and title case.">
+          <div class="tool-card-top"><span class="tool-icon orange">Aa</span><span class="tool-tag">EVERYDAY</span></div><h3>Case Converter</h3><p>Switch text between uppercase, lowercase and title case.</p><button class="tool-open" data-tool="case">Open tool <span>↗</span></button>
+        </article>
+        <article class="tool-card" tabindex="0" role="button" aria-label="Open tool: QR Code Generator" data-name="QR Code Generator" data-category="Everyday" data-description="Generate a QR code from a link or text.">
+          <div class="tool-card-top"><span class="tool-icon green">▦</span><span class="tool-tag">EVERYDAY</span></div><h3>QR Code Generator</h3><p>Turn a URL or short message into a scannable QR code.</p><button class="tool-open" data-tool="qr">Open tool <span>↗</span></button>
+        </article>
+        <article class="tool-card" tabindex="0" role="button" aria-label="Open tool: Image Compressor" data-name="Image Compressor" data-category="Images" data-description="Compress an image in your browser.">
+          <div class="tool-card-top"><span class="tool-icon pink">▧</span><span class="tool-tag">IMAGES</span></div><h3>Image Compressor</h3><p>Reduce JPG, PNG or WebP image size in your browser.</p><button class="tool-open" data-tool="image">Open tool <span>↗</span></button>
+        </article>
+        <article class="tool-card" tabindex="0" role="button" aria-label="Open tool: Resume Maker" data-name="Resume Maker" data-category="Everyday" data-description="Create a resume and print it as PDF.">
+          <div class="tool-card-top"><span class="tool-icon indigo">CV</span><span class="tool-tag">CAREER</span></div><h3>Resume Maker</h3><p>Build a clean fresher resume with a live preview.</p><a class="tool-open link-button" href="resume/index.html">Open tool <span>↗</span></a>
+        </article>
+        <article class="tool-card" tabindex="0" role="button" aria-label="Open tool: Base64 Encoder Decoder" data-name="Base64 Encoder Decoder" data-category="Developer" data-description="Encode or decode Base64 text.">
+          <div class="tool-card-top"><span class="tool-icon teal">64</span><span class="tool-tag">DEVELOPER</span></div><h3>Base64 Encoder / Decoder</h3><p>Encode plain text to Base64 or decode Base64 back to text.</p><button class="tool-open" data-tool="base64">Open tool <span>↗</span></button>
+        </article>
+        <article class="tool-card" tabindex="0" role="button" aria-label="Open tool: Password Generator" data-name="Password Generator" data-category="Everyday" data-description="Generate a random password in your browser.">
+          <div class="tool-card-top"><span class="tool-icon yellow">✳</span><span class="tool-tag">EVERYDAY</span></div><h3>Password Generator</h3><p>Create a random password with your preferred length.</p><button class="tool-open" data-tool="password">Open tool <span>↗</span></button>
+        </article>
+      </div>
+      <div class="empty-state" id="emptyState" hidden>No tools found. Try another search.</div>
+    </section>
+
+    <section class="callout" id="about"><div class="callout-icon">✦</div><div><p class="eyebrow">MADE TO BE USEFUL</p><h2>Your work deserves fewer roadblocks.</h2><p>DevTools Hub is designed as a growing toolkit. Add new tools as your needs grow — keep everything organised in one place.</p></div><a href="README.md" class="callout-link">How to add tools <span>↗</span></a></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-icon">&lt;/&gt;</span><span>DevTools<span class="brand-accent">Hub</span></span></a><span>Useful tools. Less busywork.</span><span>© <span id="year"></span> DevTools Hub</span></footer>
+
+  <div class="modal-backdrop" id="toolModal" hidden>
+    <section class="tool-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head"><div><p class="eyebrow dark-eyebrow">QUICK TOOL</p><h2 id="modalTitle">Tool name</h2></div><button class="close-modal" id="closeModal" aria-label="Close tool">×</button></div>
+      <div id="modalBody" class="modal-body"></div>
+      <div class="modal-status" id="modalStatus" aria-live="polite"></div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create a clean, professional resume and save it as a PDF." />
+  <title>JobReady — Resume Maker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">J</span><span>JobReady<span class="brand-light"> Resume Maker</span></span></a>
+    <div class="top-actions">
+      <button class="btn btn-ghost" id="clearBtn" type="button">Clear form</button>
+      <button class="btn btn-primary" id="downloadBtn" type="button">Download PDF ↗</button>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="editor-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR CAREER STARTS HERE</p>
+          <h1>Build your resume</h1>
+          <p class="muted">Add your details. Your resume updates automatically.</p>
+        </div>
+        <span class="step-pill">01 / 02</span>
+      </div>
+
+      <div class="template-picker">
+        <label for="templateSelect">Resume style</label>
+        <select id="templateSelect">
+          <option value="classic">Classic ATS</option>
+          <option value="modern">Modern</option>
+          <option value="compact">Compact</option>
+        </select>
+      </div>
+
+      <form id="resumeForm">
+        <fieldset>
+          <legend><span class="legend-icon">01</span> Personal details</legend>
+          <div class="field-grid">
+            <label>Full name<input name="fullName" placeholder="e.g. Ayush Chaudhary" value="Your Name" /></label>
+            <label>Target role<input name="role" placeholder="e.g. Web Developer" value="Fresher / Entry-Level Candidate" /></label>
+            <label>Email<input name="email" type="email" placeholder="you@example.com" /></label>
+            <label>Phone<input name="phone" type="tel" placeholder="+91 98765 43210" /></label>
+            <label class="full">City, State<input name="location" placeholder="e.g. Prayagraj, Uttar Pradesh" /></label>
+            <label class="full">Portfolio / LinkedIn / GitHub<input name="links" placeholder="linkedin.com/in/you | github.com/you" /></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="legend-icon">02</span> Professional summary</legend>
+          <label>Short summary<textarea name="summary" rows="3" placeholder="Write 2–3 lines about your strengths, skills and career goal.">Motivated fresher eager to apply technical skills, learn from experienced teams, and contribute to real-world projects.</textarea></label>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="legend-icon">03</span> Education</legend>
+          <div class="field-grid">
+            <label class="full">Course / qualification<input name="education" placeholder="e.g. Diploma in Computer Science" value="Diploma / Degree" /></label>
+            <label>School / college<input name="college" placeholder="Institution name" /></label>
+            <label>Year / expected graduation<input name="gradYear" placeholder="e.g. 2027" /></label>
+            <label>Marks (optional)<input name="marks" placeholder="e.g. 75%" /></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="legend-icon">04</span> Skills</legend>
+          <label>Separate skills with commas<textarea name="skills" rows="2" placeholder="HTML, CSS, JavaScript, Excel, SQL">Communication, Problem solving, Teamwork</textarea></label>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="legend-icon">05</span> Projects & experience</legend>
+          <label>Project / experience title<input name="projectTitle" placeholder="e.g. Personal Portfolio Website" /></label>
+          <label>Description<textarea name="projectDesc" rows="3" placeholder="What did you build or do? Mention tools used and results."></textarea></label>
+          <p class="field-hint">Tip: Add measurable results where possible. Do not include skills or experience you don't have.</p>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="legend-icon">06</span> Additional information</legend>
+          <div class="field-grid">
+            <label class="full">Certifications<input name="certifications" placeholder="e.g. Excel Fundamentals — Provider" /></label>
+            <label class="full">Languages<input name="languages" placeholder="e.g. Hindi, English" /></label>
+          </div>
+        </fieldset>
+        <div class="form-footer">
+          <span class="muted small">Your details stay in this browser session. This demo does not upload them.</span>
+          <button class="btn btn-primary" type="button" id="previewBtn">Update preview ↓</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="preview-panel">
+      <div class="preview-heading">
+        <div><p class="eyebrow">LIVE PREVIEW</p><h2>Your resume</h2></div>
+        <span class="live-dot">Live</span>
+      </div>
+      <div class="preview-wrap">
+        <article class="resume classic" id="resumePreview" aria-label="Resume preview">
+          <header class="resume-header">
+            <h1 id="pName">Your Name</h1>
+            <p class="resume-role" id="pRole">Fresher / Entry-Level Candidate</p>
+            <div class="contact-line" id="pContact"></div>
+          </header>
+          <section class="resume-section" id="summarySection">
+            <h2>Professional Summary</h2><p id="pSummary"></p>
+          </section>
+          <section class="resume-section" id="educationSection">
+            <h2>Education</h2>
+            <div class="resume-entry"><div><strong id="pEducation">Diploma / Degree</strong><span id="pCollege"></span></div><span class="entry-date" id="pGradYear"></span></div>
+            <p class="entry-detail" id="pMarks"></p>
+          </section>
+          <section class="resume-section" id="skillsSection">
+            <h2>Skills</h2><ul class="skill-list" id="pSkills"></ul>
+          </section>
+          <section class="resume-section" id="projectSection">
+            <h2>Projects & Experience</h2><div class="resume-entry"><strong id="pProjectTitle"></strong></div><p id="pProjectDesc"></p>
+          </section>
+          <section class="resume-section" id="certSection"><h2>Certifications</h2><p id="pCertifications"></p></section>
+          <section class="resume-section" id="languagesSection"><h2>Languages</h2><p id="pLanguages"></p></section>
+        </article>
+      </div>
+      <div class="preview-note"><span>✦</span><span>For best results, keep your resume concise and tailored to the role.</span></div>
+    </section>
+  </main>
+  <footer class="site-footer">JobReady Resume Maker <span>•</span> Free starter project</footer>
+  <script src="script.js"></script>
+</body>
+</html>
